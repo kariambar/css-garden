@@ -4,9 +4,9 @@
 
 /* base CSS */
 * {
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box;         /* Opera/IE 8+ */
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;    
+  box-sizing: border-box;         
 }
 
 html, body {
@@ -44,14 +44,9 @@ header {
   height: 230px;
   padding: 20px 0 70px 0;
 
-  background: #2d6360 50% 0 url(huntington.jpg) no-repeat; /* old IE fallback */
-
-  background-attachment: fixed, fixed, fixed, scroll;
-  background-image: url(contours.png), url(noise.png), url(gridlines.png), url(huntington.jpg);
-  background-position: 0 0, 0 0, -5px -25px, 0 50%;
-  background-repeat: repeat, repeat, repeat, no-repeat;
-  background-size: auto, auto, auto, cover;
-  text-align: center;
+ /* background: #2d6360 50% 0 url(huntington.jpg) no-repeat; /* old IE fallback */
+ background-image: url(../img/banner.jpg);
+text-align: center;
 }
 
 
@@ -69,7 +64,7 @@ h1 {
   font-size: 3.2em;
   text-transform: uppercase;
 }
-h1::before {
+h1:before {
   display: inline-block;
   position: relative;
   top: 20px;
@@ -97,7 +92,7 @@ h2::before {
 }
 h3 {
   margin: 2em 0 0 0;
-  color: #2e484c;
+  color: #a9b995;
   font-family: 'Julius Sans One', sans-serif;
   font-size: 1.8em;
   font-weight: normal;
@@ -111,10 +106,14 @@ p {
 
 .page-wrapper {
   position: relative;
+   background-image: url(../img/fondo2.jpg);
 }
 .summary, .preamble {
   width: 80%;
   margin: 0 auto;
+background-attachment: scroll, scroll, fixed;
+  background-color: rgba(255,255,255,0.3);
+  color: white;
 }
 .supporting h3, .supporting p {
   width: 80%;
@@ -124,8 +123,14 @@ p {
 
 .summary {
   padding-top: 2em;
+
 }
 
+.main .supporting, .explanation{
+  background-attachment: scroll, scroll, fixed;
+  background-color: rgba(255,255,255,0.3);
+  color: white;
+}
 
 /* intro block links -- download HTML/CSS */
 .intro a, .intro a:visited {
@@ -187,15 +192,17 @@ p {
 /* coloured cutoff */
 div.participation, div.benefits {
   background-attachment: scroll, scroll, fixed;
-  background-color: rgba(138,188,159,0.5);
+  background-color: #2e484c;
   background-image: url(contours-opaque.png), url(gridlines-opaque.png), url(bamboo.png);
   background-repeat: repeat, repeat, no-repeat;
   background-size: auto, auto, cover;
+  color:white;
 }
 /* extra padding at the cutoffs */
 div.participation {
   padding: 3em 0;
   margin-top: 3em;
+  color:white;
 }
 div.benefits {
   padding-bottom: 3em;
@@ -217,11 +224,12 @@ div.participation p, div.benefits p {
   display: none;
 }
 .sidebar a {
-  color: #607476;
+  color: #a9b995;
   text-decoration: none;
 }
   .sidebar a:hover, .sidebar a:focus {
-    color: #49968e;
+    color: #1a5952;
+    text-decoration: none;
   }
 .sidebar ul {
   padding: 0;
@@ -269,7 +277,7 @@ div.participation p, div.benefits p {
   display: none;
 }
 .design-selection .designer-name {
-  color: #616857;
+  color: #a9b995;
   font-size: 0.9em;
   font-style: normal;
 }
@@ -386,15 +394,19 @@ div.participation p, div.benefits p {
 
 
 /* busting out the credits block */
+.requirements{
+  background-color: white;
+}
+
 .requirements p:nth-child(5) {
   padding-bottom: 2em;
 }
 .supporting .requirements {
-  float: none;
   clear: both;
   width: 100%;
   padding-left: 0;
   padding-right: 0;
+  background-color: white;
 }
 .supporting .requirements a {
   text-decoration: none;
@@ -409,11 +421,10 @@ div.participation p, div.benefits p {
   width: auto;
   padding: 1em 12%;
   margin: 0;
-  color: rgba(255, 255, 255, 0.4);
-  background: #3e5d67;
+  color: rgba(255, 255, 255, 0.9);
+  background-image: url(../img/banner2.jpg);
 
   background-attachment: fixed, fixed, fixed, scroll;
-  background-image: url(contours.png), url(gridlines.png), url(noise.png), url(koi.jpg);
   background-position: 0 0, -5px -25px, 0 0, 0 50%;
   background-repeat: repeat, repeat, repeat, no-repeat;
   background-size: auto, auto, auto, cover;
@@ -434,7 +445,7 @@ footer {
   clear: both;
   padding: 3em 10%;
   color: #fff;
-  background: #134347;
+  background: #2a887d;
   text-align: center;
 }
 footer a {
@@ -475,16 +486,16 @@ footer a::before {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
 }
-  footer a.zen-validate-html::before {content: "5";}
-  footer a.zen-validate-html:hover::before, footer a.zen-validate-html:focus::before {content: "%";}
-  footer a.zen-validate-css::before {content: "3";}
-  footer a.zen-validate-css:hover::before, footer a.zen-validate-css:focus::before {content: "#";}
-  footer a.zen-license::before {content: "c";}
-  footer a.zen-license:hover::before, footer a.zen-license:focus::before {content: "C";}
-  footer a.zen-accessibility::before {content: "a";}
-  footer a.zen-accessibility:hover::before, footer a.zen-accessibility:focus::before {content: "A";}
-  footer a.zen-github::before {content: "g";}
-  footer a.zen-github:hover::before, footer a.zen-github:focus::before {content: "G";}
+  footer a.zen-validate-html::before {content: url(../img/be.png);}
+  footer a.zen-validate-html:hover::before, footer a.zen-validate-html:focus::before {content: url(../img/be2.png);}
+  footer a.zen-validate-css::before {content: url(../img/te.png);}
+  footer a.zen-validate-css:hover::before, footer a.zen-validate-css:focus::before {content: url(../img/te2.png);}
+  footer a.zen-license::before {content: url(../img/we.png);}
+  footer a.zen-license:hover::before, footer a.zen-license:focus::before {content: url(../img/we2.png);}
+  footer a.zen-accessibility::before {content: url(../img/pi.png);}
+  footer a.zen-accessibility:hover::before, footer a.zen-accessibility:focus::before {content: url(../img/pi2.png);}
+  footer a.zen-github::before {content: url(../img/tw.png);}
+  footer a.zen-github:hover::before, footer a.zen-github:focus::before {content: url(../img/tw2.png);}
 
 
 
@@ -672,7 +683,6 @@ footer a::before {
     width: 125px;
     height: 125px;
     margin: -65px 40px 0 0;
-    background: url(enso.svg);
     background-size: 100%;
     opacity: 0.6;
 
@@ -692,6 +702,7 @@ footer a::before {
   /* main layout blocks */
   nav, .supporting {
     display: inline;
+    background: white;
   }
   .summary, .preamble, .supporting div, .requirements h3, .requirements p {
     float: left;
@@ -900,12 +911,12 @@ footer a::before {
     (min-resolution: 1.5dppx) {
 
     header {
-        background-image: url(contours@2x.png), url(noise.png), url(gridlines.png), url(huntington.jpg);
+        background-image: url(../img/contours@2x.png), url(noise.png), url(gridlines.png), url(huntington.jpg);
         background-size: 50% auto, auto, auto, cover;
     }
 
     .requirements p:last-child {
-        background-image: url(contours@2x.png), url(gridlines.png), url(noise.png), url(koi.jpg);
+        background-image: url(../img/contours@2x.png), url(gridlines.png), url(noise.png), url(koi.jpg);
         background-size: 50% auto, auto, auto, cover;
     }
 
